@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import type { PageData } from './$types';
+	export let data: PageData;
+</script>
+
+<table border={1} cellpadding={4} cellspacing={4}>
+	{#each data.items as item}
+		<tr>
+			<td>
+				{item.key}
+			</td>
+			<td>
+				{item.value}
+			</td>
+		</tr>
+	{/each}
+</table>
